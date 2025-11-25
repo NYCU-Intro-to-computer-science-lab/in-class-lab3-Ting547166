@@ -2,9 +2,29 @@
 
 #include <iostream>
 using namespace std;
+bool isPrime(int n){
+    for(int i=2; i<n;i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
 
 int main() {
-    
-    
+    int n, a = 1000000, b;
+    cin >> n;
+    for(int i=2;i<n-2;i++){
+        if(isPrime(i)){
+            if(isPrime(n-i)){
+                if(i < a){
+                    a = i;
+                    b = n-i;
+                }
+                
+            }
+        }
+    }
+    cout << a << " " << b << '\n';
     return 0;
 }
