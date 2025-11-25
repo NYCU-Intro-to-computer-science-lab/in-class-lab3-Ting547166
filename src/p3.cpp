@@ -3,7 +3,10 @@
 #include <iostream>
 using namespace std;
 bool isPrime(int n){
-    for(int i=2; i<n;i++){
+    if(n==2){
+        return true;
+    }
+    for(int i=2; i*i<=n;i++){
         if(n%i==0){
             return false;
         }
@@ -12,12 +15,12 @@ bool isPrime(int n){
 }
 
 int main() {
-    int n, a = 1000000, b;
+    int n, a = 2000000, b;
     cin >> n;
-    for(int i=2;i<n-2;i++){
+    for(int i=2;i<=n-2;i++){
         if(isPrime(i)){
             if(isPrime(n-i)){
-                if(i < a){
+                if(i <= a){
                     a = i;
                     b = n-i;
                 }
